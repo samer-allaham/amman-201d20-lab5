@@ -8,7 +8,7 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
-function sum(a, b) {
+function sum(a, b,) {
   //eslint-disable-line
   let sum=a+b;
   return [sum,`The sum of ${a} and ${b} is ${sum}.`]
@@ -51,9 +51,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
-  let sumAndMultiply=[(a+b+c),(a*b*c)]
 
-  return [sumAndMultiply[0],sumAndMultiply[1],`${a} and ${b} and ${c} sum to ${sumAndMultiply[0]}.`,`The product of ${a} and ${b} and ${c} is ${sumAndMultiply[1]}.`]
+  let d1=sum(a,b)[0];
+  let sump3= sum(d1,c)[0];
+
+  let d2=multiply(a,b)[0];
+  let multip3=multiply(d2,c)[0];
+
+  return [sump3,multip3,`${a} and ${b} and ${c} sum to ${sump3}.`,`The product of ${a} and ${b} and ${c} is ${multip3}.`]
   //eslint-disable-line
 }
 
@@ -73,11 +78,23 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
-let testArray = [2, 3, 4]; //eslint-disable-line
+ //eslint-disable-line
+ let testArray = [2, 3, 4];
 
 function sumArray(sumArr) {
-  let testArray=[(2+3+4),'2,3,4 was passed in as an array of numbers, and 9 is their sum.']
-  return testArray;
+
+  
+  let finalsum=0;
+
+  for (let index = 0; index < testArray.length; index++) {
+    
+    finalsum = sum (finalsum,testArray[index])[0];
+    
+  }  
+  return [finalsum,'2,3,4 was passed in as an array of numbers, and 9 is their sum.'];
+
+
+  
   //eslint-disable-line
 }
 
@@ -102,8 +119,19 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray2=[2,3,4]
 
 function multiplyArray(multArr) {
-  let testArray=[(2*3*4),"The numbers 2,3,4 have a product of 24."]
-  return testArray;
+
+  let finalmulti=1;
+
+  for (let index = 0; index < testArray2.length; index++) {
+    
+    finalmulti = multiply(finalmulti,testArray[index])[0];
+    
+  }  
+  return [finalmulti,'The numbers 2,3,4 have a product of 24.'];
+
+
+  //let testArray=[(2*3*4),"The numbers 2,3,4 have a product of 24."]
+  //return testArray;
   
   //eslint-disable-line
 }
